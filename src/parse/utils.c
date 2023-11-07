@@ -6,7 +6,7 @@
 /*   By: ksaelim <ksaelim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 15:04:24 by ksaelim           #+#    #+#             */
-/*   Updated: 2023/10/20 11:06:24 by ksaelim          ###   ########.fr       */
+/*   Updated: 2023/10/24 11:25:04 by ksaelim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,12 +43,8 @@ double	ft_atof(char *str)
 	double	decimal;
 
 	integer = (double)ft_atoi(str);
-	// printf("integer: %f\n", integer);
 	str += ft_strlen_mode(str, '.') + 1;
 	decimal = (double)ft_atoi(str);
-	printf("decimal: %f\n", decimal);
-	printf("decimal strlen: %zu\n", ft_strlen(str));
-	// printf("decimal / strlen: %f\n", (decimal / pow((double)10, (double)ft_strlen(str))));
 	return (integer + (decimal / pow((double)10, (double)ft_strlen(str))));
 }
 

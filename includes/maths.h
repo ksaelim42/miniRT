@@ -1,36 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parse.h                                            :+:      :+:    :+:   */
+/*   maths.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksaelim <ksaelim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/08 15:26:50 by ksaelim           #+#    #+#             */
-/*   Updated: 2023/11/07 09:58:38 by ksaelim          ###   ########.fr       */
+/*   Created: 2023/10/09 14:35:17 by ksaelim           #+#    #+#             */
+/*   Updated: 2023/10/24 10:04:38 by ksaelim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PARSE_H
-# define PARSE_H
+#ifndef MATHS_H
+# define MATHS_H
+# include <math.h>
 
-# define FRACTIONAL_BIT 16
-
-# include "libft.h"
-# include "maths.h"
-
-
-typedef struct s_cam
+typedef struct s_fixvec
 {
-	t_vec	orig;
-	t_vec	dir;
-	double	fov;
-}	t_cam;
+	int		x;
+	int		y;
+	int		z;
+}	t_fixvec;
 
-
-// typedef struct s_sc
-
-typedef struct s_sphere
+typedef struct s_vec
 {
-	
-}
+	float	x;
+	float	y;
+	float	z;
+}	t_vec;
 #endif

@@ -6,39 +6,36 @@
 /*   By: ksaelim <ksaelim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/01 01:21:10 by bsirikam          #+#    #+#             */
-/*   Updated: 2023/10/06 21:55:43 by ksaelim          ###   ########.fr       */
+/*   Updated: 2023/11/07 11:50:18 by ksaelim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "miniRT.h"
+#include "includes/miniRT.h"
+
+void	create_img(t_param *data)
+{
+	data->mlx = mlx_init();
+	data->win = mlx_new_window(data->mlx, WD_WIDTH, WD_HEIGHT, "RT ja!");
+	data->img.img = mlx_new_image(data->mlx, WD_WIDTH, WD_HEIGHT);
+	data->img.addr = mlx_get_data_addr(data->img.img, &data->img.bpp, \
+	&data->img.line, &data->img.endian);
+}
 
 int	main(void)
 {
-	// Image
+    void    *mlx;
+    void *win;
 
-    int image_width = 256;
-    int image_height = 256;
-
-    // Render
-
-    printf("P3\n%d %d\n255\n", image_width, image_height);
-
-    for (int j = 0; j < image_height; ++j) {
-        for (int i = 0; i < image_width; ++i) {
-            double r = (double)i / (image_width-1);
-            double g = (double)j / (image_height-1);
-            double b = 0;
-
-            int ir = (int)(255.999 * r);
-            int ig = (int)(255.999 * g);
-            int ib = (int)(255.999 * b);
-
-            printf("%d %d %d\n", ir, ig, ib);
-		if (ir == 12)
-			break;
-        }
-		break;
-    }
-
+    t_vec *sphere_center = new_vec(3, 2, -32);
+    t_sphere    *sphere = new_sphere(sphere_center, 12/2);
+    t_vec   *cam_orig = new_vec(0, 0, 0);
+    t_vec   *cam_dir = new_vec(0, 0, -1);
+    t_camera    *cam = new_camera(cam_orig, cam_dir, 70);
+    t_scene     *scene =  new_scene(cam, sphere);
+    scene->width = WD_WIDTH;
+    scene->hight = WD_HEIGHT;
+	win = mlx_new_window(mlx, scene->width, scene->hight, "RT ja!");
+    ray_tracing(mlx, window, scene);
+    mlx_loop(mlx);
     return 0;
 }

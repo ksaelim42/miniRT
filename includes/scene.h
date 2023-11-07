@@ -1,36 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parse.h                                            :+:      :+:    :+:   */
+/*   scene.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksaelim <ksaelim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/08 15:26:50 by ksaelim           #+#    #+#             */
-/*   Updated: 2023/11/07 09:58:38 by ksaelim          ###   ########.fr       */
+/*   Created: 2023/11/07 10:18:29 by ksaelim           #+#    #+#             */
+/*   Updated: 2023/11/07 11:37:33 by ksaelim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PARSE_H
-# define PARSE_H
+#ifndef SCENE_H
+# define SCENE_H
 
-# define FRACTIONAL_BIT 16
-
-# include "libft.h"
-# include "maths.h"
-
-
-typedef struct s_cam
+typedef struct s_scene
 {
-	t_vec	orig;
-	t_vec	dir;
-	double	fov;
-}	t_cam;
+	t_camera	*cam;
+	t_sphere	*sphere;
+	float		width;
+	float		hight;
+}	t_scene;
 
+t_scene	*new_scene(t_camera *cam, t_sphere *sphere);
 
-// typedef struct s_sc
-
-typedef struct s_sphere
-{
-	
-}
 #endif

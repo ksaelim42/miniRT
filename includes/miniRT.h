@@ -6,7 +6,7 @@
 /*   By: ksaelim <ksaelim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/01 01:21:35 by bsirikam          #+#    #+#             */
-/*   Updated: 2023/10/19 10:01:06 by ksaelim          ###   ########.fr       */
+/*   Updated: 2023/11/07 10:41:59 by ksaelim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,20 @@
 
 # include <unistd.h>
 # include <stdio.h>
-# include "parse.h"
-# include "mlx.h"
 
+# include "mlx.h"
+# include "vector.h"
+# include "utils.h"
+# include "sphere.h"
+# include "camera.h"
+# include "scene.h"
+
+
+# define WD_WIDTH 1280
+# define WD_HEIGHT 720
 # define FRACTIONAL_BIT 16
+// # define HEIGHT 900
+// # define WIDTH 400
 
 // typedef struct s_vec
 // {

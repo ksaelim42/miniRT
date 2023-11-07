@@ -1,36 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parse.h                                            :+:      :+:    :+:   */
+/*   view_plane.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksaelim <ksaelim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/08 15:26:50 by ksaelim           #+#    #+#             */
-/*   Updated: 2023/11/07 09:58:38 by ksaelim          ###   ########.fr       */
+/*   Created: 2023/11/07 11:51:25 by ksaelim           #+#    #+#             */
+/*   Updated: 2023/11/07 11:56:32 by ksaelim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PARSE_H
-# define PARSE_H
+#ifndef VIEW_PLANE_H
+# define VIEW_PlANE_H
 
-# define FRACTIONAL_BIT 16
-
-# include "libft.h"
-# include "maths.h"
-
-
-typedef struct s_cam
+typedef struct s_vplane
 {
-	t_vec	orig;
-	t_vec	dir;
-	double	fov;
-}	t_cam;
+	float	
+}	t_vplane;
 
-
-// typedef struct s_sc
-
-typedef struct s_sphere
-{
-	
-}
 #endif
